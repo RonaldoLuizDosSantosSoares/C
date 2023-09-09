@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+#include <iostream>
+#include <cstdlib>
+#include <conio.h>
+
+int main ()
+
+{
+
+int n;
+int divisor1,divisor2,media;
+
+
+printf("Digite a quantidade de números\n");
+scanf("%d",&n);
+
+while((n>0)&&(n<=50))
+{
+n++;
+divisor1=n*5;
+divisor2=n*7;
+
+if((divisor1%2==0) && (divisor2%2==0))
+printf("%d\n     %d\n\n ",divisor1,divisor2);
+}
+media=(divisor1+divisor2)/50;
+printf("media %d",media);
+}

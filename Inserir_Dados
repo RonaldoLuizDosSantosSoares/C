@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+#include <iostream>
+#include <cstdlib>
+#include <conio.h>
+
+char nome[25];
+int idade,numero;
+char cargo,sim,nao;
+int salario;
+int telefone;
+
+int main ()
+{
+
+printf("Digite o seu nome\n");
+scanf("%s",&nome);
+
+while(nome[25]>25)
+{
+printf("Caracteres máximos alcançados, tente denovo\n");
+return 0;
+}
+
+printf("Digite sua idade\n");
+scanf("%d",&idade);
+
+if(idade<16)
+{
+printf("Digite o nome dos pais e seu telefone\n");
+scanf("%s %s %d",&nome,&nome,&telefone);
+}
+else
+{
+printf("Digite o número do seu telefone\n");
+scanf("%d",&telefone);
+}
+
+printf("Digite o cargo que deseja\n");
+scanf("%s",&cargo);
+
+printf("Digite o salário desejado\n");
+scanf("%d",&salario);
+
+if((salario>=0) && (salario<500))
+{
+printf("Digite novamente\n");
+scanf("%d",&salario);
+}
+else
+{
+printf("Deseja confirmar os dados?\n");
+scanf("%s",sim);
+}
+
+}

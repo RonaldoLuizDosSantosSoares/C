@@ -1,0 +1,29 @@
+/******************************************************************************
+
+calculo de imposto sobre um carro
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    char nm_carro;
+    float valor;
+    int imposto;
+    float total;
+    
+    printf("Cadastro de carros da loja CAR & FUI \n");
+    printf("Digite o nome do carro \n");
+    scanf("%s", &nm_carro);
+    
+    printf("Digite o valor do carro \n");
+    scanf("%f", &valor);
+    
+    printf("Digite o valor do imposto \n");
+    scanf("%d", &imposto);
+    
+    total = (valor * imposto/100) + valor;
+    
+    printf("O valor total do carro %c \n", nm_carro);
+    printf("Foi de: %.2f \n",total);
+}

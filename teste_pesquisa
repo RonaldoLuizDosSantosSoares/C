@@ -1,0 +1,25 @@
+/******************************************************************************
+
+Testando pesquisas
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[] = "Substantivo é a classe de palavras usada para dar nome aos seres, objetos, fenômenos, lugares, qualidades, ações, dentre outros. Exemplos: menino, João, Portugal, caneta, ventania, coragem, corrida.";
+    char pesquisa[] = "é";
+    char *ptr = strstr(str,pesquisa);
+
+    if (ptr != NULL)
+    {
+        printf(" O texto contém a palavra: '%s'\n",pesquisa);
+    }
+    else
+    {
+        printf("O texto não contém a palavra: '%s'\n",pesquisa);
+    }
+
+}

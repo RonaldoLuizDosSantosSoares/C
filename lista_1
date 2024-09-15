@@ -1,0 +1,1166 @@
+// #define EX_O1
+// #define EX_O2
+// #define EX_O3
+// #define EX_O4
+// #define EX_O5
+// #define EX_O6
+// #define EX_O7
+// #define EX_O8
+// #define EX_O9
+// #define EX_10
+// #define EX_11
+// #define EX_12
+// #define EX_13
+// #define EX_14
+// #define EX_15
+// #define EX_16
+// #define EX_17
+// #define EX_18
+// #define EX_19
+// #define EX_20
+// #define EX_21
+// #define EX_22
+// #define EX_23
+// #define EX_24
+// #define EX_25
+// #define EX_26
+
+#ifdef EX_O1
+#include <stdio.h>
+
+/**************************
+
+1. Receba via teclado um numero inteiro e exiba o seu sucessor e seu antecessor.
+
+***************************/
+
+int main()
+{
+    int num, pre, prox;
+
+    printf("Digite um numero inteiro \n");
+    scanf("%d", &num);
+
+    prox = num + 1;
+    pre = num - 1;
+
+    printf("O numero antecessor: %d \n", pre);
+    printf("O numero sucessor: %d \n", prox);
+
+    return 0;
+}
+#endif
+
+#ifdef EX_O2
+#include <stdio.h>
+#include <stdlib.h>
+
+/**************************
+
+2. Receba via teclado um numero positivo e exiba esse valor com reajuste de 10%.
+
+***************************/
+
+int main()
+{
+    int imposto;
+    float reajuste, num;
+
+    printf("Digite um numero positivo \n");
+    scanf("%f", &num);
+
+    while(num <= 0) {
+        system("clear");
+        printf("O numero tem que ser positivo e maior que 0, Digite novamente! \n");
+        scanf("%f", &num);
+    }
+
+    imposto = 10;
+    reajuste = (num * imposto / 100) + num;
+
+    system("clear");
+    printf("O numero reajustado ficou: %.2f \n", reajuste);
+
+    return 0;
+}
+#endif
+
+#ifdef EX_O3
+#include <stdio.h>
+#include <stdlib.h>
+
+/**************************
+
+3. Solicite ao usuário o preço de um carro e calcule o novo preço com desconto de 9%.
+
+***************************/
+
+int main() {
+    float val;
+    float val_final;
+    const int desconto = 9;
+
+    printf("Digite o preco de um carro: \n");
+    scanf("%f", &val);
+
+    while (val <= 0) {
+        printf("O valor tem que ser maior que 0. Digite novamente: \n");
+        scanf("%f", &val);
+    }
+
+    val_final = val - (val * desconto / 100);
+
+    printf("O preco ficou com %d%% de desconto: %.2f\n", desconto, val_final);
+
+}
+#endif
+
+#ifdef EX_O4
+#include <stdio.h>
+#include <stdlib.h>
+
+/**************************
+
+4. Cálculo de um salário líquido de um professor.
+Serão fornecidos via teclado o valor da hora aula,
+o número de aulas dadas e o desconto do INSS.
+
+***************************/
+
+int main() {
+    float sal;
+    float val_hr_aula;
+    int num_aulas;
+    int desconto;
+
+    printf("Digite o valor da hora aula: \n");
+    scanf("%f", &val_hr_aula);
+    
+        while (val_hr_aula <= 0) {
+        printf("O valor tem que ser maior que 0. Digite novamente: \n");
+        scanf("%f", &val_hr_aula);
+    }
+    
+    printf("Digite o numero de aulas dadas: \n");
+    scanf("%d", &num_aulas);
+    
+    printf("Digite o desconto do INSS: \n");
+    scanf("%d", &desconto);
+    
+    sal = (val_hr_aula * num_aulas) - desconto/100;
+
+    printf("O salario do professor foi: %.2f\n", sal);
+
+}
+#endif
+
+#ifdef EX_O5
+#include <stdio.h>
+#include <stdlib.h>
+
+/**************************
+
+5. O custo ao consumidor de um carro novo é a soma do preço da fábrica com o percentual de lucro do distribuidor e dos impostos aplicados ao preço de fábrica.
+Faça um programa que receba via teclado: O preço de fábrica de um veículo, o percentual de lucro do distribuidor e o percentual de impostos. Calcule e mostre:
+a.	O valor correspondente ao lucro do distribuidor
+b.	O valor correspondente aos impostos
+c.	O preço final do veículo
+
+***************************/
+
+int main() {
+    float preco;
+    float preco_final;
+    int perc_lucro;
+    int perc_imposto;
+
+    printf("Digite preco de fabrica do carro: \n");
+    scanf("%f", &preco);
+    
+        while (preco <= 0) {
+        printf("O preco tem que ser maior que 0. Digite novamente! \n");
+        scanf("%f", &preco);
+    }
+    
+    printf("Digite o percentual do lucro: \n");
+    scanf("%d", &perc_lucro);
+    
+    printf("Digite o percentual do imposto: \n");
+    scanf("%d", &perc_imposto);
+    
+    preco_final = (preco * perc_lucro/100 * perc_imposto/100) + preco;
+
+    printf("O preco final do carro foi: %.2f\n", preco_final);
+
+}
+#endif
+
+#ifdef EX_O6
+#include <stdio.h>
+#include <stdlib.h>
+
+/**************************
+
+6.	Elabore um programa que receba o salário de um funcionário e calcule o reajuste desse salário.
+Considere que o funcionário deve receber um reajuste de 15% caso seu salário seja menor que 800 reais.
+Se o salário for maior ou igual a 800 e menor ou igual a 1000, seu reajuste será de 10 %;
+caso seja maior que 1000, o reajuste deve ser de 5%.
+Ao final do programa deve apresentar o valor antigo e o novo salário.
+
+
+***************************/
+
+int main() {
+    float sal;
+    float reajuste;
+
+
+    printf("Digite o salario do funcionario: \n");
+    scanf("%f", &sal);
+    
+        while (sal <= 0) {
+        printf("O salario tem que ser maior que 0. Digite novamente! \n");
+        scanf("%f", &sal);
+    }
+    
+    if(sal>=800 && sal<=1000){
+        reajuste = (sal * 10/100) + sal;
+    }
+    else{
+        if(sal>1000){
+            reajuste = (sal * 5/100) + sal;
+        }
+    else{
+        printf("Salario abaixo de 800 nao recebe reajuste \n");
+        return 0;
+    }
+        
+    }
+
+    printf("O salario do funcionario apos o reajuste e: %.2f\n", reajuste);
+
+}
+#endif
+
+#ifdef EX_O7
+#include <stdio.h>
+#include <stdlib.h>
+
+/**************************
+
+7.	Leia quatro valores referentes às notas escolares de um aluno e exiba uma mensagem dizendo que
+ele foi aprovado se a média for maior ou igual a 6.
+Caso contrário informe que ele está reprovado.
+Apresente junto à mensagem o valor da média obtida pelo aluno independente de ter sido aprovado ou não.
+As notas deverão ser maiores ou iguais a zero e menores ou iguais a dez.
+
+***************************/
+
+int main() {
+    int v1,v2,v3,v4;
+    float media;
+
+    printf("Digite o valor da primeira nota: \n");
+    scanf("%d", &v1);
+    
+    if(v1<0||v1>10){
+    printf("O valor da nota nao pode ser menor que 0 nem maior que 10, Digite novamente: \n");
+    scanf("%d", &v1);
+    }
+    
+    printf("Digite o valor da segunda nota: \n");
+    scanf("%d", &v2);
+
+    if(v2<0||v2>10){
+    printf("O valor da nota nao pode ser menor que 0 nem maior que 10, Digite novamente: \n");
+    scanf("%d", &v2);
+    }
+    
+    printf("Digite o valor da terceira nota: \n");
+    scanf("%d", &v3);
+    
+    if(v3<0||v3>10){
+    printf("O valor da nota nao pode ser menor que 0 nem maior que 10, Digite novamente: \n");
+    scanf("%d", &v3);
+    }
+    
+    printf("Digite o valor da quarta nota: \n");
+    scanf("%d", &v4);
+   
+    if(v4<0||v4>10){
+    printf("O valor da nota nao pode ser menor que 0 nem maior que 10, Digite novamente: \n");
+    scanf("%d", &v4);
+    }
+
+    media = (v1 + v2 + v3 + v4)/4;
+    
+    if(media>=6){
+       printf("O aluno foi aprovado \n");
+    }
+    else{
+       printf("O aluno foi reprovado \n");
+        }
+
+    printf("A media foi: %.1f", media);
+
+}
+#endif
+
+#ifdef EX_O8
+#include <stdio.h>
+#include <stdlib.h>
+
+/**************************
+
+8.	Receba dois números:
+o primeiro deve ser maior que 10 e menor que 25,
+o segundo deve ser maior ou igual a zero,
+o terceiro deve ser a soma dos dois primeiros 
+e o quarto é o produto dos três números anteriores.
+
+Calcule e exiba a soma dos quadrados de cada um dos quatro números.
+Caso o resultado seja menor que 50000, solicite novos dados. 
+
+***************************/
+
+int main() {
+    int num1,num2,num3,num4;
+    int resultado;
+
+    printf("Digite o primeiro numero: \n");
+    scanf("%d", &num1);
+    
+    if(num1<10 || num1>25){
+    printf("O numero nao pode ser menor que 10 e maior que 25, digite novamente. \n");
+    scanf("%d", &num1);
+    }
+    
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &num2);
+    
+    if(num2<0){
+    printf("O numero nao pode ser menor que 0, digite novamente. \n");
+    scanf("%d", &num2);
+    }
+    
+    num3 = num1 + num2;
+    
+    num4 = num1 * num2 * num3;
+    
+    resultado = num1 * num1 + num2 * num2 + num3 * num3 + num4 * num4;
+    
+    printf("O resultado foi: %d \n",resultado);
+    
+    if(resultado<50000){
+        printf("Digite novos dados!!");
+    }
+    else{
+        return 0;
+    }
+
+}
+#endif
+
+#ifdef EX_O9
+#include <stdio.h>
+#include <stdlib.h>
+
+/**************************
+
+9.	Leia dois valores a e b e os escreve com a mensagem: "São múltiplos" ou "Não são múltiplos".
+
+***************************/
+
+int main() {
+    int a,b;
+
+    printf("Digite dois valores: \n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    
+    if(a%b==0){
+        printf("Sao multiplos \n");
+    }
+    else{
+        printf("Nao sao multiplos \n");
+    }
+
+}
+#endif
+
+#ifdef EX_10
+#include <stdio.h>
+
+/******************************************************************************
+
+10.	Leia o preço de um produto
+e inflaciona esse preço em 10% se ele for menor que 100 e em 20% se ele for maior ou igual a 100.
+
+*******************************************************************************/
+
+int main()
+{
+    float preco;
+    
+    printf("Digite o preco de um produto: \n");
+    scanf("%f", &preco);
+    
+    if(preco>=100){
+        preco = (preco * 20/100) + preco;
+    }
+    else{
+        preco = (preco * 10/100) + preco;
+    }
+
+    printf("O preco inflacionado foi: %.2f \n",preco);
+}
+#endif
+
+#ifdef EX_11
+#include <stdio.h>
+
+/******************************************************************************
+
+11.	Leia dois números inteiros e mostre o maior deles.
+
+*******************************************************************************/
+
+int main()
+{
+    int a,b,calculo;
+    
+    printf("Digite dois numeros inteiros: \n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    if(a>b){
+        printf("O primeiro valor e maior que o segundo \n");
+        return 0;
+    }
+    
+    if(a==b){
+        printf("Os valores sao iguais \n");
+        return 0;
+    }
+    
+    else{
+        printf("O segundo valor e maior que o primeiro");
+    }
+    
+}
+#endif
+
+#ifdef EX_12
+#include <stdio.h>
+
+/******************************************************************************
+
+12.	Leia o número de identificação,
+as 3 notas obtidas por um aluno nas 3 verificações e a média dos exercícios que fazem parte da avaliação.
+Calcular a média de aproveitamento, usando a fórmula:
+MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + ME)/7
+A atribuição de conceitos obedece a tabela abaixo:
+
+*******************************************************************************/
+
+int main()
+{
+    int Nota1, Nota2, Nota3;
+    float MA, ME;
+    
+    printf("Digite a primeira nota: \n");
+    scanf("%d", &Nota1);
+    
+    while(Nota1>10||Nota1<0){
+        printf("A nota nao pode ser menor que 0 ou maior que 10, digite novamente \n");
+        scanf("%d", &Nota1);
+    }
+    
+    printf("Digite a segunda nota: \n");
+    scanf("%d", &Nota2);
+    
+        while(Nota2>10||Nota2<0){
+        printf("A nota nao pode ser menor que 0 ou maior que 10, digite novamente \n");
+        scanf("%d", &Nota2);
+    }
+    
+    printf("Digite a terceira nota: \n");
+    scanf("%d", &Nota3);
+    
+        while(Nota3>10||Nota3<0){
+        printf("A nota nao pode ser menor que 0 ou maior que 10, digite novamente \n");
+        scanf("%d", &Nota3);
+    }
+
+    ME = (Nota1 + Nota2 + Nota3)/3;
+    MA = (Nota1 + Nota2 * 2 + Nota3 * 3 + ME)/7;
+    
+    printf("A media do aluno foi: %.1f \n",MA);
+    
+    if(MA>4 & MA<6){
+        printf("O aproveitamento foi D \n");
+        printf("O aluno foi reprovado \n");
+    }
+    
+    if(MA<4){
+        printf("O aproveitamento foi E \n");
+        printf("O aluno foi reprovado \n");
+    }
+    
+    if(MA>=9){
+        printf("O aproveitamento foi A \n");
+        printf("O aluno foi aprovado \n");
+    }
+    
+    if(MA>=7.5 & MA<9){
+        printf("O aproveitamento foi B \n");
+        printf("O aluno foi aprovado \n");
+    }
+    
+    if(MA>=6 & MA<7.5){
+        printf("O aproveitamento foi C \n");
+        printf("O aluno foi aprovado \n");
+    }
+    
+}
+#endif
+
+#ifdef EX_13
+#include <stdio.h>
+
+/******************************************************************************
+
+13.	Receba via teclado um número inteiro qualquer e exiba se ele é positivo ou negativo ou zero.
+
+*******************************************************************************/
+
+int main()
+{
+    int num;
+    
+    printf("Digite um numero inteiro: \n");
+    scanf("%d", &num);
+    
+    if(num>0){
+        printf("numero positivo\n");
+        return 0;
+    }
+    
+    if(num==0){
+        printf("numero e zero\n");
+        return 0;
+    }
+    
+    if(num<0){
+        printf("numero negativo\n");
+        return 0;
+    }
+
+}
+#endif
+
+#ifdef EX_14
+#include <stdio.h>
+
+/******************************************************************************
+
+14.	Calcule a média aritmética das quatro notas de um aluno e mostre, além do valor da média,
+uma mensagem de "Aprovado", caso a média seja igual ou superior a 6,
+ou a mensagem "reprovado",caso contrário.
+
+*******************************************************************************/
+
+int main()
+{
+    int Nota1, Nota2, Nota3, Nota4;
+    float MA;
+    
+    printf("Digite a primeira nota: \n");
+    scanf("%d", &Nota1);
+    
+    while(Nota1>10||Nota1<0){
+        printf("A nota nao pode ser menor que 0 ou maior que 10, digite novamente \n");
+        scanf("%d", &Nota1);
+    }
+    
+    printf("Digite a segunda nota: \n");
+    scanf("%d", &Nota2);
+    
+        while(Nota2>10||Nota2<0){
+        printf("A nota nao pode ser menor que 0 ou maior que 10, digite novamente \n");
+        scanf("%d", &Nota2);
+    }
+    
+    printf("Digite a terceira nota: \n");
+    scanf("%d", &Nota3);
+    
+        while(Nota3>10||Nota3<0){
+        printf("A nota nao pode ser menor que 0 ou maior que 10, digite novamente \n");
+        scanf("%d", &Nota3);
+    }
+    
+    printf("Digite a quarta nota: \n");
+    scanf("%d", &Nota4);
+    
+        while(Nota4>10||Nota4<0){
+        printf("A nota nao pode ser menor que 0 ou maior que 10, digite novamente \n");
+        scanf("%d", &Nota4);
+    }
+
+    MA = (Nota1 + Nota2 + Nota3 + Nota4)/4;
+    
+    printf("A media aritmetica do aluno foi: %.1f \n",MA);
+    
+    if(MA<6){
+        printf("Aluno reprovado \n");
+    }
+    else{
+        printf("Aluno aprovado \n");
+    }
+    
+}
+#endif
+
+#ifdef EX_15
+#include <stdio.h>
+
+/******************************************************************************
+
+15.	Leia dois valores a e b e os escreve com a mensagem: "São múltiplos" ou "Não são múltiplos".
+
+*******************************************************************************/
+
+int main()
+{
+    int a,b;
+    
+    printf("Digite o primeiro valor: \n");
+    scanf("%d", &a);
+    
+    printf("Digite o segundo valor: \n");
+    scanf("%d", &b);
+    
+    if(a%b==0){
+        printf("Sao multiplos \n");
+    }
+    else{
+        printf("Nao sao multiplos \n");
+    }
+    
+}
+#endif
+
+#ifdef EX_16
+#include <stdio.h>
+
+/******************************************************************************
+
+16.	Receba dois valores a e b e os escreve com a mensagem: "São pares " ou "São ímpares".
+
+*******************************************************************************/
+
+int main()
+{
+    int a,b;
+    static int cont;
+
+    printf("Digite o primeiro valor: \n");
+    scanf("%d", &a);
+    
+    printf("Digite o segundo valor: \n");
+    scanf("%d", &b);
+    
+    if(a%2==0){
+        cont = cont + 1;
+    }
+    else{
+        cont = cont + 2;
+    }
+    
+    if(b%2==0){
+        cont = cont + 1;
+    }
+    else{
+        cont = cont + 2;
+    }
+    
+    if(cont==4){
+        printf("Sao impares");
+        return 0;
+    }
+    
+    if(cont==2){
+        printf("Sao pares");
+        return 0;
+    }
+    
+    if(cont!=2 || cont!=4){
+        printf("Um e par e outro impar");
+        return 0;
+    }
+}
+#endif
+
+#ifdef EX_17
+#include <stdio.h>
+
+/******************************************************************************
+
+17.	Leia dois números inteiros e mostre o maior deles. Caso sejam iguais informe ao usuário.
+
+*******************************************************************************/
+
+int main()
+{
+    int a,b;
+
+    printf("Digite o primeiro numero: \n");
+    scanf("%d", &a);
+    
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &b);
+    
+    if(a>b){
+        printf("O primeiro valor e maior que o segundo: %d \n",a);
+        return 0;
+    }
+    
+    if(a<b){
+        printf("O segundo valor e maior que o primeiro: %d \n",b);
+        return 0;
+    }
+    
+    if(a==b){
+        printf("Ambos sao iguais");
+        return 0;
+    }
+}
+#endif
+
+#ifdef EX_18
+#include <stdio.h>
+
+/******************************************************************************
+
+18.	Receba três números que garantam a existência de uma equação do 2º grau.
+Se houver raízes reais exiba-as, caso contrário informe ao usuário.
+
+*******************************************************************************/
+
+int main()
+{
+    int num1,num2,num3;
+    int delta,resultado,raiz_1,raiz_2;
+
+    printf("Digite o primeiro numero: \n");
+    scanf("%d", &num1);
+    
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &num2);
+    
+    printf("Digite o segundo numero: \n");
+    scanf("%d", &num3);
+    
+    if(num1 == 0){
+        printf("O primeiro numero nao pode ser 0");
+        return 0;
+    }
+    
+    delta = num2 * num2 - 4 * num1 * num3;
+    
+    raiz_1 = (-num2 + delta) / (2 * num1);
+    
+    raiz_2 = (-num2 - delta) / (2 * num1);
+    
+    if(raiz_1<0){
+        printf("x1 nao tem raiz real \n");
+    }
+    else{
+        printf("A raiz x1 da equacao e: %d \n",raiz_1);
+    }
+    
+    if(raiz_2<0){
+        printf("x2 nao tem raiz real");
+    }
+    else{
+        printf("A raiz x2 da equacao e: %d \n",raiz_2);
+    }
+    
+}
+#endif
+
+#ifdef EX_19
+#include <stdio.h>
+
+/******************************************************************************
+
+19.	- A FATEC RUBENS LARA faz o pagamento de seus professores por hora/aula.
+Faça um algoritmo que calcule e exiba o salário de um professor.
+Sabe-se que o valor da hora/aula segue a tabela abaixo:
+Professor Nível 1 R$55,00 por hora/aula
+Professor Nível 2 R$67,00 por hora/aula
+Professor Nível 3 R$78,00 por hora/aula.
+
+*******************************************************************************/
+
+int main()
+{
+    
+    int nivel,hr_aula;
+    float valor_aula;
+    
+    printf("Digite o nivel do Professor: \n");
+    
+    do{
+    
+    printf("O nivel do professor nao pode ser menor ou igual a 0 \n");
+    scanf("%d",&nivel);
+    
+    }while(nivel<=0);
+    
+    printf("Digite a hora/aula do professor: \n");
+    scanf("%d",&hr_aula);
+    
+    switch(nivel){
+        case 1:
+        valor_aula = hr_aula * 55.00;
+        break;
+        
+        case 2:
+        valor_aula = hr_aula * 67.00;
+        break;
+        
+        case 3:
+        valor_aula = hr_aula * 78.00;
+        break;
+        
+        default:
+        printf("Nivel nao encontrado, entrar com um novo dado \n");
+        break;
+   
+    }
+    
+    printf("O salario do professor e: %.2f \n",valor_aula);
+
+}
+#endif
+
+#ifdef EX_20
+#include <stdio.h>
+
+/******************************************************************************
+
+20.	Escrever um algoritmo que leia três números quaisquer
+e informe qual é o maior e se eles forem todos igual informe ao usuário e solicite novos dados.
+
+*******************************************************************************/
+
+int main()
+{
+    
+    int a,b,c;
+    int cont;
+    
+    do{
+    printf("Digite o primeiro valor: \n");
+    scanf("%d",&a);
+    
+    printf("Digite o segundo valor: \n");
+    scanf("%d",&b);
+    
+    printf("Digite o terceiro valor: \n");
+    scanf("%d",&c);
+    
+    if(a>b & a>c){
+        printf("O primeiro valor (%d) e maior que os demais \n",a);
+        cont = 0;
+    }
+    
+    if(b>a & b>c){
+        printf("O segundo valor (%d) e maior que os demais \n",b);
+        cont = 0;
+    }
+    
+    if(c>b & c>a){
+        printf("O terceiro valor (%d) e maior que os demais \n",c);
+        cont = 0;
+    }
+    
+    if(a==b & b==c & a==c){
+        printf("Os valores sao iguais: (%d) , (%d) , (%d) \n",a,b,c);
+        printf("Digite novos valores abaixo \n \n");
+        cont = 1;
+    }
+    
+    }while(cont==1);
+
+}
+#endif
+
+#ifdef EX_21
+#include <stdio.h>
+
+// 21. Receba três números que representam os lados de um triângulo e garantam a existência de um triângulo.
+// Informe ao usuário se o triângulo é isóscele, equilátero ou escaleno.
+// a. Garantir que cada lado é menor que a soma dos outros dois lados.
+// b. O triângulo é equilátero quando todos os lados são iguais.
+// c. O triângulo é isóscele quando apenas dois lados são iguais.
+
+int main() {
+
+    int a,b,c;
+    
+    printf("Digite 3 numeros que representem um triangulo \n");
+
+do{
+    printf("Digite um numero qualquer que nao seja menor ou igual a 0 \n");
+    scanf("%d",&a);
+}while(a<=0);
+
+do{
+    printf("Digite um segundo numero qualquer que nao seja menor ou igual a 0 \n");
+    scanf("%d",&b);
+}while(b<=0);
+
+do{
+    printf("Digite um terceiro numero qualquer que nao seja menor ou igual a 0 \n");
+    scanf("%d",&c);
+}while(c<=0);
+
+    if (a!=b & b!=c & c!=a) {
+        printf("O triangulo e escaleno");
+        return 0;
+    }
+    
+    if (a==b & a==c & c==b) {
+        printf("O triangulo e equilatero \n");
+        return 0;
+    } else {
+        printf("O triangulo e isoceles");
+        return 0;
+    }
+
+}
+#endif
+
+#ifdef EX_22
+#include <stdio.h>
+
+// 22. faca um programa que receba o numero de horas trabalhadas e o salario minimo
+
+int main() {
+    int hrs_trabalhadas;
+    float valor_hr, sal_bruto, sal_minimo, imposto, sal_final;
+    
+    printf("Digite as horas trabalhadas: \n");
+    scanf("%d", &hrs_trabalhadas);
+    
+    printf("Digite o salario minimo: \n");
+    scanf("%f", &sal_minimo);
+    
+    valor_hr = sal_minimo / 220.0;
+    
+    sal_bruto = hrs_trabalhadas * valor_hr;
+    
+    imposto = sal_bruto * 0.03;
+    
+    sal_final = sal_bruto - imposto;
+    
+    printf("O salario final e de: %.2f \n", sal_final);
+    
+    return 0;
+}
+#endif
+
+#ifdef EX_23
+#include <stdio.h>
+
+/* 
+
+23.	Cada degrau de uma escada tem X de altura. Faça um programa que
+receba essa altura e a altura que o usuário deseja subindo a escada.
+Calcule e mostre quantos degraus o usuário deverá subir para atingir seu objetivo,
+sem se preocupar com a altura do usuário.
+
+*/
+
+int main() {
+    
+    float alt_desejada,x;
+    
+    printf("Digite a altura dos degraus: \n");
+    scanf("%f", &x);
+    
+    printf("Digite a altura que o usuario deseja: \n");
+    scanf("%f", &alt_desejada);
+    
+    if(alt_desejada>x){
+        printf("Falta %.2f para chegar \n",alt_desejada/x);
+    }
+    else if(alt_desejada<x){
+        printf("Ultrapassou \n");
+    }
+    else{
+        printf("Chegou ao seu destino \n");
+    }
+    
+    return 0;
+}
+#endif
+
+#ifdef EX_24
+#include <stdio.h>
+
+/* 
+
+24.	O IMC – Índice de Massa Corporal é um critério da Organização Mundial de Saúde
+para dar uma indicação sobre a condição de peso de uma pessoa adulta.
+A fórmula é IMC = peso / (altura)2.
+Elabore um algoritmo que leia o peso e a altura de um adulto e mostre sua condição
+
+*/
+
+int main() {
+    
+    float peso,altura,imc;
+    
+    printf("Programa para calcular o IMC \n");
+    printf("Digite o peso: \n");
+    scanf("%f", &peso);
+    
+    printf("Digite a altura: \n");
+    scanf("%f", &altura);
+    
+    imc = peso/(altura*2);
+    
+    if(imc<17){
+        printf("Muito abaixo do peso \n");
+    }
+    else if(imc>=17 & imc<=18.49){
+        printf("Abaixo do peso \n");
+    }
+    else if(imc>=18.5 & imc<=24.99){
+        printf("Peso normal \n");
+    }
+    else if(imc>=25 & imc<=29.99){
+        printf("Acima do peso \n");
+    }
+    else if(imc>=30 & imc<=34.99){
+        printf("Obesidade I \n");
+    }
+    else if(imc>=35 & imc<=39.99){
+        printf("Obesidade II (severa) \n");
+    }
+    else{
+        printf("Obesidade III (morbida) \n");
+    }
+    
+    return 0;
+}
+#endif
+
+#ifdef EX_25
+#include <stdio.h>
+
+/* 
+
+25.	Faça um programa que receba a altura e o peso de uma pessoa.
+De acordo com a tabela a seguir e mostre qual a classificação dessa pessoa.
+
+*/
+
+int main() {
+    
+    float peso,altura;
+    
+    printf("Digite o peso: \n");
+    scanf("%f", &peso);
+    
+    printf("Digite a altura: \n");
+    scanf("%f", &altura);
+    
+    if(altura<1.20 & peso<=60){
+        printf("Categoria A");
+    }
+    else if(altura<=1.20 & altura<1.70 & peso<=60){
+        printf("Categoria B");
+    }
+    else if(altura>=1.70 & peso<=60){
+        printf("Categoria C");
+    }
+    
+    
+    if(altura<=1.20 & peso>60 & peso<=90){
+        printf("Categoria D");
+    }
+    else if(altura<=1.20 & altura<1.70 & peso>60 & peso<=90){
+        printf("Categoria E");
+    }
+    else if(altura>=1.70 & peso>60 & peso<=90){
+        printf("Categoria F");
+    }
+    
+    
+    if(altura<=1.20 & peso>90){
+        printf("Categoria G");
+    }
+    else if(altura<=1.20 & altura<1.70 & peso>90){
+        printf("Categoria H");
+    }
+    else if(altura>=1.70 & peso>90){
+        printf("Categoria I");
+    }
+    
+    return 0;
+}
+#endif
+
+#ifdef EX_26
+#include <stdio.h>
+
+/* 
+
+26.	Faça um algoritmo que receba o salário a idade, o sexo (1 para masculino e 2 para feminino).
+Mostre o sexo, a idade e o salário obtido após o acréscimo do abono
+
+*/
+
+int main() {
+    
+    int idade,sexo;
+    float salario;
+    
+    printf("Digite o salario: \n");
+    scanf("%f", &salario);
+    
+    printf("Digite a idade: \n");
+    scanf("%d", &idade);
+
+    while(sexo!=1 & sexo!=2){
+    printf("Digite o sexo, so pode ser 1 ou 2: \n");
+    scanf("%d", &sexo);
+    }
+    
+    if(sexo == 1 & idade>=30){
+        salario = salario + 200;
+    }
+    else if(sexo == 1 & idade<30){
+        salario = salario + 120;
+        
+    }
+    
+    
+    if(sexo == 2 & idade>=30){
+        salario = salario +220;
+    }
+    else if(sexo == 2 & idade<30){
+        salario = salario + 130;
+        
+    }
+   
+    printf("O salario com ajuste e: %.2f \n",salario);
+    
+    return 0;
+}
+#endif
+
